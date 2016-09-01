@@ -1,0 +1,79 @@
+@font-face {font-family: "ReklameScriptW00-Medium";
+    src: url("../fonts/Reklame-Script-W00-Medium.ttf");
+}
+@font-face {font-family: "Lithos Pro Bold";
+    src: url("../fonts/Lithos-Pro-Bold.ttf");
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+#row-one{
+  width: 100%;
+  background-color: #20B4DB;
+  .top-strip{
+    width: 100%;
+    height: 15px;
+    background-color: #FC951B;
+  }
+}
+#row-one-container{
+  background-color: #20B4DB;
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  .row-one-bg{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+#site-navigation{
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  line-height: 155px;
+  margin-left: 20px;
+  ul{
+    display: inline-block;
+    font-family: "Lithos Pro Bold";
+    vertical-align: baseline;
+    letter-spacing: 1px;
+    color: #12508A;
+  }
+  li{
+    font-size: .8em;
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    transition: color 200ms ease-in;
+    &.selected, &:hover{
+      color: white;
+    }
+  }
+}
+#site-logo{
+  display: inline-block;
+  position: absolute;
+  right: 25px;
+  top: 20px;
+}
+#brand-slogan{
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color: white;
+  letter-spacing: 3px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+  h5{
+    font-size: 2em;
+    font-family: 'Lithos Pro Bold';
+    font-weight: bold;
+  }
+  h3{
+    font-size: 4.3em;
+    font-family: 'ReklameScriptW00-Medium';
+  }
+}
