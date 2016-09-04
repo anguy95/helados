@@ -4,55 +4,27 @@
 @font-face {
   font-family: "Lithos Pro Bold";
   src: url("../fonts/Lithos-Pro-Bold.ttf"); }
+@font-face {
+  font-family: "Cronos Pro Regular";
+  src: url("../fonts/Cronos-Pro.ttf"); }
 * {
   margin: 0;
   padding: 0;
   font-size: 16px; }
 
-#row-one {
-  width: 100%;
-  background-color: #20B4DB; }
-  #row-one .top-strip {
-    width: 100%;
-    height: 15px;
-    background-color: #FC951B; }
+/*-------------------- SINGLE ROW --------------------*/
+.row {
+  width: 100%; }
 
-#row-one-container {
-  background-color: #20B4DB;
+.single-row-container {
   position: relative;
-  width: 1000px;
+  max-width: 992px;
   margin: 0 auto; }
-  #row-one-container .row-one-bg {
-    width: 100%;
-    object-fit: cover; }
 
-#site-navigation {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  line-height: 155px;
-  margin-left: 20px; }
-  #site-navigation ul {
-    display: inline-block;
-    font-family: "Lithos Pro Bold";
-    vertical-align: baseline;
-    letter-spacing: 1px;
-    color: #12508A; }
-  #site-navigation li {
-    font-size: .8em;
-    display: inline-block;
-    padding: 0 10px 0 10px;
-    transition: color 200ms ease-in; }
-    #site-navigation li.selected, #site-navigation li:hover {
-      color: white; }
+.row-bg {
+  width: 100%; }
 
-#site-logo {
-  display: inline-block;
-  position: absolute;
-  right: 25px;
-  top: 20px; }
-
-#brand-slogan {
+.single-center-text {
   width: 100%;
   position: absolute;
   left: 50%;
@@ -62,12 +34,154 @@
   color: white;
   letter-spacing: 3px;
   text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px; }
-  #brand-slogan h5 {
+  .single-center-text h5 {
     font-size: 2em;
     font-family: 'Lithos Pro Bold';
     font-weight: bold; }
-  #brand-slogan h3 {
+  .single-center-text h3 {
     font-size: 4.3em;
     font-family: 'ReklameScriptW00-Medium'; }
+
+/*-------------------- SIDE BY SIDE --------------------*/
+.side-side-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.right-item, .left-item {
+  position: relative;
+  width: 100%;
+  height: 652px; }
+
+.right-item {
+  background: #FFF; }
+
+.left-item {
+  background: #FF9000; }
+
+.side-img {
+  display: block;
+  position: absolute;
+  right: -100px; }
+
+.description-container {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 319px; }
+  .description-container .description-title {
+    font-family: 'Lithos Pro Bold';
+    font-size: 1.5em; }
+  .description-container .description-item {
+    color: #2F2E2E;
+    font-family: 'ReklameScriptW00-Medium';
+    font-size: 1.7em;
+    margin-bottom: 30px; }
+  .description-container .description {
+    font-family: 'Cronos Pro Regular', sans-serif;
+    line-height: 1.8em; }
+
+@media screen and (max-width: 992px) {
+  .side-side-container {
+    flex-direction: column;
+    margin: 0 auto; }
+
+  .side-img, .description-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); } }
+/*--------------------FOOTER --------------------*/
+footer {
+  width: 100%;
+  height: 70px;
+  background: #FC951B;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Cronos Pro Regular';
+  letter-spacing: 1px;
+  line-height: 70px; }
+
+/*-------------------- ROW ONE --------------------*/
+#row-one {
+  background-color: #20B4DB; }
+  #row-one .top-strip {
+    height: 15px;
+    background-color: #FC951B; }
+
+/*-------------------- ROW TWO --------------------*/
+#row-two {
+  background: yellow; }
+
+/*-------------------- ROW THREE --------------------*/
+#row-three {
+  background-color: #5FBC43; }
+  #row-three .single-row-container {
+    position: relative;
+    height: 780px; }
+    #row-three .single-row-container .single-center-text {
+      z-index: 999; }
+    #row-three .single-row-container .row-three-bg {
+      width: auto;
+      position: absolute;
+      left: 555px;
+      transform: translateX(-50%); }
+    @media screen and (max-width: 1313px) {
+      #row-three .single-row-container .row-three-bg {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        transform: none; } }
+
+/*-------------------- ROW FOUR --------------------*/
+#row-four .right-item {
+  background: #00B6DF; }
+#row-four .left-item {
+  z-index: 999;
+  background: #FFF; }
+#row-four #row-four-image {
+  left: 0px; }
+#row-four .description-container {
+  left: auto;
+  right: 100px; }
+@media screen and (max-width: 1313px) {
+  #row-four .side-side-container {
+    flex-direction: column;
+    margin: 0 auto; }
+  #row-four #row-four-image, #row-four .description-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); } }
+
+/*-------------------- ROW FIVE --------------------*/
+#row-five {
+  background-color: #FC951B;
+  position: relative; }
+  #row-five .single-row-container {
+    height: 780px; }
+    #row-five .single-row-container .single-center-text {
+      z-index: 999; }
+    #row-five .single-row-container .row-five-bg {
+      display: block;
+      width: auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); }
+    @media screen and (max-width: 1313px) {
+      #row-five .single-row-container .row-five-bg {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        transform: none; } }
+
+/*-------------------- ROW SIX --------------------*/
+#row-six .left-item {
+  background: #00C645; }
+#row-six #row-six-image {
+  right: 0px; }
 
 /*# sourceMappingURL=main.css.map */

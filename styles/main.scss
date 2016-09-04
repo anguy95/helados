@@ -4,60 +4,28 @@
 @font-face {font-family: "Lithos Pro Bold";
     src: url("../fonts/Lithos-Pro-Bold.ttf");
 }
+@font-face {font-family: "Cronos Pro Regular";
+    src: url("../fonts/Cronos-Pro.ttf");
+}
 *{
   margin: 0;
   padding: 0;
   font-size: 16px;
 }
-#row-one{
+
+/*-------------------- SINGLE ROW --------------------*/
+.row{
   width: 100%;
-  background-color: #20B4DB;
-  .top-strip{
-    width: 100%;
-    height: 15px;
-    background-color: #FC951B;
-  }
 }
-#row-one-container{
-  background-color: #20B4DB;
+.single-row-container{
   position: relative;
-  width: 1000px;
+  max-width: 992px;
   margin: 0 auto;
-  .row-one-bg{
-    width: 100%;
-    object-fit: cover;
-  }
 }
-#site-navigation{
-  position: absolute;
+.row-bg{
   width: 100%;
-  height: 100px;
-  line-height: 155px;
-  margin-left: 20px;
-  ul{
-    display: inline-block;
-    font-family: "Lithos Pro Bold";
-    vertical-align: baseline;
-    letter-spacing: 1px;
-    color: #12508A;
-  }
-  li{
-    font-size: .8em;
-    display: inline-block;
-    padding: 0 10px 0 10px;
-    transition: color 200ms ease-in;
-    &.selected, &:hover{
-      color: white;
-    }
-  }
 }
-#site-logo{
-  display: inline-block;
-  position: absolute;
-  right: 25px;
-  top: 20px;
-}
-#brand-slogan{
+.single-center-text{
   width: 100%;
   position: absolute;
   left: 50%;
@@ -75,5 +43,183 @@
   h3{
     font-size: 4.3em;
     font-family: 'ReklameScriptW00-Medium';
+  }
+}
+
+
+/*-------------------- SIDE BY SIDE --------------------*/
+.side-side-container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-item,.left-item{
+  position: relative;
+  width: 100%;
+  height: 652px;
+}
+.right-item{
+  background: #FFF;
+}
+.left-item{
+  background: #FF9000;
+}
+.side-img{
+  display: block;
+  position: absolute;
+  right: -100px;
+}
+.description-container{
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 319px;
+  .description-title{
+    font-family: 'Lithos Pro Bold';
+    font-size: 1.5em;
+  }
+  .description-item{
+    color: #2F2E2E;
+    font-family: 'ReklameScriptW00-Medium';
+    font-size: 1.7em;
+    margin-bottom: 30px;
+  }
+  .description{
+    font-family: 'Cronos Pro Regular', sans-serif;
+    line-height: 1.8em;
+  }
+}
+@media screen and (max-width: 992px) {
+  .side-side-container{
+    flex-direction: column;
+      margin: 0 auto;
+  }
+  .side-img, .description-container{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+/*--------------------FOOTER --------------------*/
+footer{
+  width: 100%;
+  height: 70px;
+  background: #FC951B;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Cronos Pro Regular';
+  letter-spacing: 1px;
+  line-height: 70px;
+}
+
+/*-------------------- ROW ONE --------------------*/
+#row-one{
+  background-color: #20B4DB;
+  .top-strip{
+    height: 15px;
+    background-color: #FC951B;
+  }
+}
+
+/*-------------------- ROW TWO --------------------*/
+#row-two{
+  background: yellow;
+}
+
+/*-------------------- ROW THREE --------------------*/
+#row-three{
+  background-color: #5FBC43;
+  .single-row-container{
+    position: relative;
+    height: 780px;
+    .single-center-text{
+      z-index: 999;
+    }
+    .row-three-bg{
+      width: auto;
+      position: absolute;
+      left: 555px;
+      transform: translateX(-50%);
+    }
+    @media screen and (max-width: 1313px) {
+      .row-three-bg{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        transform:none;
+      }
+    }
+  }
+}
+
+/*-------------------- ROW FOUR --------------------*/
+#row-four{
+  .right-item{
+    background: #00B6DF;
+  }
+  .left-item{
+    z-index: 999;
+    background: #FFF;
+  }
+  #row-four-image{
+    left: 0px;
+  }
+  .description-container{
+    left: auto;
+    right: 100px;
+  }
+  @media screen and (max-width: 1313px) {
+    .side-side-container{
+      flex-direction: column;
+        margin: 0 auto;
+    }
+    #row-four-image, .description-container{
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+}
+
+/*-------------------- ROW FIVE --------------------*/
+#row-five{
+  background-color: #FC951B;
+  position: relative;
+  .single-row-container{
+    height: 780px;
+    .single-center-text{
+      z-index: 999;
+    }
+    .row-five-bg{
+      display: block;
+      width: auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @media screen and (max-width: 1313px) {
+      .row-five-bg{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        transform:none;
+      }
+    }
+  }
+}
+
+/*-------------------- ROW SIX --------------------*/
+#row-six{
+  .left-item{
+    background: #00C645;
+  }
+  #row-six-image{
+    right: 0px;
   }
 }
