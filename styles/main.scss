@@ -13,6 +13,71 @@
   font-size: 16px;
 }
 
+#site-navigation{
+  z-index: 999;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 992px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  ul{
+    display: flex;
+    position: relative;
+    list-style: none;
+    font-family: "Lithos Pro Bold";
+    letter-spacing: 1px;
+    .nav-item{
+      align-self: flex-end;
+      margin-bottom: 20px;
+      &:hover a{
+        color: #fff;
+      }
+    }
+    a{
+      font-size: .8em;
+      padding: 0 10px 0 10px;
+      transition: color 100ms ease-in;
+      color: #12508A;
+      text-decoration: none;
+    }
+    .selected>a{
+      color: #fff;
+    }
+  }
+  #drop-down-menu{
+    visibility: hidden;
+    transition: 0.1s 300ms;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    margin-top: 10px;
+    .drop-down-item{
+      text-align: center;
+      width: 100%;
+      padding: 7px 0 7px 0;
+      margin: 0;
+      a{
+        font-size: .7em;
+        color: #12508A;
+        text-decoration: none;
+        transition: color 200ms ease-in;
+      }
+      &:hover a{
+        color: #f5f5f5;
+      }
+    }
+  }
+}
+
+#drop-btn:hover #drop-down-menu{
+  visibility: visible;
+   transition-delay: 0s;
+}
+
 /*-------------------- SINGLE ROW --------------------*/
 .row{
   width: 100%;
@@ -25,7 +90,7 @@
 .row-bg{
   width: 100%;
 }
-.single-center-text{
+.single-text{
   width: 100%;
   position: absolute;
   left: 50%;
@@ -59,16 +124,9 @@
   width: 100%;
   height: 652px;
 }
-.right-item{
-  background: #FFF;
-}
-.left-item{
-  background: #FF9000;
-}
 .side-img{
   display: block;
   position: absolute;
-  right: -100px;
 }
 .description-container{
   position: absolute;
@@ -102,6 +160,9 @@
     left: 50%;
     transform: translate(-50%,-50%);
   }
+  .side-img{
+    width: 100%;
+  }
 }
 
 /*--------------------FOOTER --------------------*/
@@ -127,7 +188,15 @@ footer{
 
 /*-------------------- ROW TWO --------------------*/
 #row-two{
-  background: yellow;
+  .right-item{
+    background: #FFF;
+  }
+  .left-item{
+    background: #FF9000;
+  }
+  #row-two-image{
+    right: -100px;
+  }
 }
 
 /*-------------------- ROW THREE --------------------*/
@@ -136,7 +205,7 @@ footer{
   .single-row-container{
     position: relative;
     height: 780px;
-    .single-center-text{
+    .single-text{
       z-index: 999;
     }
     .row-three-bg{
@@ -173,11 +242,8 @@ footer{
     left: auto;
     right: 100px;
   }
-  @media screen and (max-width: 1313px) {
-    .side-side-container{
-      flex-direction: column;
-        margin: 0 auto;
-    }
+  //Media query to recenter text and image in side containers.
+  @media screen and (max-width: 992px) {
     #row-four-image, .description-container{
       top: 50%;
       left: 50%;
@@ -192,7 +258,7 @@ footer{
   position: relative;
   .single-row-container{
     height: 780px;
-    .single-center-text{
+    .single-text{
       z-index: 999;
     }
     .row-five-bg{
@@ -218,8 +284,5 @@ footer{
 #row-six{
   .left-item{
     background: #00C645;
-  }
-  #row-six-image{
-    right: 0px;
   }
 }

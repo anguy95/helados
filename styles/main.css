@@ -12,6 +12,60 @@
   padding: 0;
   font-size: 16px; }
 
+#site-navigation {
+  z-index: 999;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 992px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+  #site-navigation ul {
+    display: flex;
+    position: relative;
+    list-style: none;
+    font-family: "Lithos Pro Bold";
+    letter-spacing: 1px; }
+    #site-navigation ul .nav-item {
+      align-self: flex-end;
+      margin-bottom: 20px; }
+      #site-navigation ul .nav-item:hover a {
+        color: #fff; }
+    #site-navigation ul a {
+      font-size: .8em;
+      padding: 0 10px 0 10px;
+      transition: color 100ms ease-in;
+      color: #12508A;
+      text-decoration: none; }
+    #site-navigation ul .selected > a {
+      color: #fff; }
+  #site-navigation #drop-down-menu {
+    visibility: hidden;
+    transition: 0.1s 300ms;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    margin-top: 10px; }
+    #site-navigation #drop-down-menu .drop-down-item {
+      text-align: center;
+      width: 100%;
+      padding: 7px 0 7px 0;
+      margin: 0; }
+      #site-navigation #drop-down-menu .drop-down-item a {
+        font-size: .7em;
+        color: #12508A;
+        text-decoration: none;
+        transition: color 200ms ease-in; }
+      #site-navigation #drop-down-menu .drop-down-item:hover a {
+        color: #f5f5f5; }
+
+#drop-btn:hover #drop-down-menu {
+  visibility: visible;
+  transition-delay: 0s; }
+
 /*-------------------- SINGLE ROW --------------------*/
 .row {
   width: 100%; }
@@ -24,7 +78,7 @@
 .row-bg {
   width: 100%; }
 
-.single-center-text {
+.single-text {
   width: 100%;
   position: absolute;
   left: 50%;
@@ -34,11 +88,11 @@
   color: white;
   letter-spacing: 3px;
   text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px; }
-  .single-center-text h5 {
+  .single-text h5 {
     font-size: 2em;
     font-family: 'Lithos Pro Bold';
     font-weight: bold; }
-  .single-center-text h3 {
+  .single-text h3 {
     font-size: 4.3em;
     font-family: 'ReklameScriptW00-Medium'; }
 
@@ -54,16 +108,9 @@
   width: 100%;
   height: 652px; }
 
-.right-item {
-  background: #FFF; }
-
-.left-item {
-  background: #FF9000; }
-
 .side-img {
   display: block;
-  position: absolute;
-  right: -100px; }
+  position: absolute; }
 
 .description-container {
   position: absolute;
@@ -92,7 +139,10 @@
   .side-img, .description-container {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); } }
+    transform: translate(-50%, -50%); }
+
+  .side-img {
+    width: 100%; } }
 /*--------------------FOOTER --------------------*/
 footer {
   width: 100%;
@@ -112,8 +162,12 @@ footer {
     background-color: #FC951B; }
 
 /*-------------------- ROW TWO --------------------*/
-#row-two {
-  background: yellow; }
+#row-two .right-item {
+  background: #FFF; }
+#row-two .left-item {
+  background: #FF9000; }
+#row-two #row-two-image {
+  right: -100px; }
 
 /*-------------------- ROW THREE --------------------*/
 #row-three {
@@ -121,7 +175,7 @@ footer {
   #row-three .single-row-container {
     position: relative;
     height: 780px; }
-    #row-three .single-row-container .single-center-text {
+    #row-three .single-row-container .single-text {
       z-index: 999; }
     #row-three .single-row-container .row-three-bg {
       width: auto;
@@ -147,10 +201,7 @@ footer {
 #row-four .description-container {
   left: auto;
   right: 100px; }
-@media screen and (max-width: 1313px) {
-  #row-four .side-side-container {
-    flex-direction: column;
-    margin: 0 auto; }
+@media screen and (max-width: 992px) {
   #row-four #row-four-image, #row-four .description-container {
     top: 50%;
     left: 50%;
@@ -162,7 +213,7 @@ footer {
   position: relative; }
   #row-five .single-row-container {
     height: 780px; }
-    #row-five .single-row-container .single-center-text {
+    #row-five .single-row-container .single-text {
       z-index: 999; }
     #row-five .single-row-container .row-five-bg {
       display: block;
@@ -181,7 +232,5 @@ footer {
 /*-------------------- ROW SIX --------------------*/
 #row-six .left-item {
   background: #00C645; }
-#row-six #row-six-image {
-  right: 0px; }
 
 /*# sourceMappingURL=main.css.map */
