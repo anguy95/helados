@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" href="styles/main.css" media="screen" title="no title">
+  <link rel="stylesheet" href="stylesheets/css/main.css" media="screen" title="no title">
 </head>
 <body>
 
-  <header id="site-navigation">
+  <header id="desktop-navigation">
     <ul>
       <li class="nav-item selected"><a href="">HOME</a></li>
       <li id="drop-btn" class="nav-item">
@@ -17,8 +18,7 @@
           <li class="drop-down-item"><a href="">Bolis</a></li>
           <li class="drop-down-item"><a href="">Helados Finos</a></li>
         </ul>
-
-      </li class="nav-item ">
+      </li>
       <li class="nav-item "><a href="">OUR STORY</a></li>
       <li class="nav-item "><a href="">GET IN TOUCH</a></li>
     </ul>
@@ -26,14 +26,33 @@
     <div class="logo-container"><img src="assets/helados-logo.png" alt=""></div>
   </header>
 
+  <nav id="mobile-nav">
+    <div id="hamburger-menu-container">
+      <div id="toggle-btn">
+        <input type="checkbox" checked/>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div id="toggle-menu">
+          <ul>
+            <a href="#"><li class="selected">HOME</li></a>
+            <a href="#"><li>PRODUCTS</li></a>
+            <a href="#"><li>OUR STORY</li></a>
+            <a href="#"><li>GET IN TOUCH</li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
   <section id="row-one" class="row">
     <div class="top-strip"></div>
     <div class="single-row-container">
       <div class="single-text">
-        <h5>Real Fruit, Real Ice Cream</h5>
-        <h3>Blended the traditional way</h3>
+        <span>Real Fruit, Real Ice Cream</span>
+        <span>Blended the traditional way</span>
       </div>
-      <img class="row-bg row-one-bg" src="assets/ice-cream.png"/>
+      <img class="row-one-bg" src="assets/ice-cream.png"/>
     </div>
   </section>
 
@@ -55,10 +74,10 @@
   <section id="row-three" class="row">
     <div class="single-row-container">
       <div class="single-text">
-        <h5>Amazing Flavors</h5>
-        <h3>Convenient Packaging</h3>
+        <span>Amazing Flavors</span>
+        <span>Convenient Packaging</span>
       </div>
-      <img class="row-bg row-three-bg" src="assets/mango-img.png"/>
+      <img class="row-three-bg" src="assets/mango-img.png"/>
     </div>
   </section>
 
@@ -82,10 +101,10 @@
   <section id="row-five" class="row">
     <div class="single-row-container">
       <div class="single-text">
-        <h5>ALWAYS AUTHENTIC</h5>
-        <h3>Always Fresh</h3>
+        <span>ALWAYS AUTHENTIC</span>
+        <span>Always Fresh</span>
       </div>
-      <img class="row-bg row-five-bg" src="assets/coconut.png"/>
+      <img class="row-five-bg" src="assets/coconut.png"/>
     </div>
   </section>
 
